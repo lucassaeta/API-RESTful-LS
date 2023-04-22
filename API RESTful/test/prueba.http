@@ -1,0 +1,169 @@
+
+###                  PRUEBAS USERS                      
+GET http://localhost:3000/api/users/madrid
+
+###
+POST http://localhost:3000/api/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ADMIN",
+    "age": "23",
+    "email": "ADMIN@ADMIN.com",
+    "password": "root12345", 
+    "city": "madrid", 
+    "interests": "sssss", 
+    "allowOffers": "false",
+    "role": "admin"
+}
+
+### 
+POST http://localhost:3000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hola@gmail.com",
+    "password": "hola1234" 
+}
+
+### 
+POST http://localhost:3000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hola@gmail.com",
+    "password": "hola1234" 
+}
+
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Javier",
+    "age": "21",
+    "email": "javi@gmail.com",
+    "password": "abc123..", 
+    "city": "barcelona", 
+    "interests": "nodejs", 
+    "allowOffers": "true"
+}
+
+
+### 
+
+PUT http://localhost:3000/api/users/642ed92591fc512d0face062 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Richi",
+    "age": "22",
+    "email": "richii2@gmail.com",
+    "password": "abc123..", 
+    "city": "barcelona", 
+    "interests": "futbol y nodejs", 
+    "allowOffers": "false"
+}
+
+###             PRUEBAS MERCHANTS/COMMERCES 
+
+POST http://localhost:3000/api/commerce HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Apple",
+    "cif": "12345678",
+    "address": "ttttttttt 23",
+    "email": "game@gmail.com", 
+    "contact": "668654950"
+}
+
+### 
+
+POST http://localhost:3000/api/commerce HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Adidas",
+    "cif": "223344",
+    "address": "tupadre 18",
+    "email": "adidas@gmail.com", 
+    "contact": "663454950"
+}
+### 
+
+PUT http://localhost:3000/api/commerce/642f3749a1e1688fcf8a3613 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "FutbolFactory",
+    "cif": "123456789",
+    "address": "fjfjjf 23",
+    "email": "aaa@aaaa.com", 
+    "contact": "6999999999"
+}
+
+### 
+GET http://localhost:3000/api/commerce/642ee515b4422bcdcbedb9ca
+
+###
+GET http://localhost:3000/api/commerce/
+
+### 
+
+DELETE http://localhost:3000/api/commerce/642f33d1195d919bb3310b3b
+
+###      WEBPAGES ESTE SERIA EL PRIMER POST QUE SE HARIA 
+
+POST http://localhost:3000/api/webpages/1fed5561-3652-463a-8282-8743b9ba7331 HTTP/1.1
+Content-Type: application/json
+
+{
+    "webpageId": "1fed5561-3652-463a-8282-8743b9ba7331",
+    "city": "madrid",
+    "activity": "futbol",
+    "title": "Partido de futbol",
+    "summary": "partido de futbol con pele y maradona", 
+    "texts": ["668654950", "hola"]
+}
+###
+DELETE http://localhost:3000/api/webpages/1fed5561-3652-463a-8282-8743b9ba7331
+### 
+
+POST http://localhost:3000/api/webpages/677c8919-6555-493c-9bca-fa8b4c70639f HTTP/1.1
+Content-Type: application/json
+
+{
+    "webpageId": "677c8919-6555-493c-9bca-fa8b4c70639f",
+    "city": "madrid",
+    "activity": "volleyball",
+    "title": "Partido de volleyball",
+    "summary": "partido de futbol con tu padre y tu abuela", 
+    "texts": ["texto1", "hola"]
+}
+
+###
+GET http://localhost:3000/api/webpages/1fed5561-3652-463a-8282-8743b9ba7331 HTTP/1.1
+
+###
+GET http://localhost:3000/api/webpages/ HTTP/1.1
+
+###     WEBPAGES SUBIR FOTO / TEXTO
+
+POST http://localhost:3000/api/webpages/1fed5561-3652-463a-8282-8743b9ba7331/photos HTTP/1.1 
+Content-Type: multipart/form-data; boundary=Boundry
+
+--Boundry
+Content-Disposition: form-data; name="image"; filename="img.jpg"
+Content-Type: image/jpg
+
+< ./img.jpg
+--Boundry--
+
+### 
+POST http://localhost:3000/api/webpages/1fed5561-3652-463a-8282-8743b9ba7331/texts HTTP/1.1 
+Content-Type: application/json
+
+{
+    "texts":["nuevotexto1", "textonuevo2"]
+}

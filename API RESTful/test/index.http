@@ -1,0 +1,189 @@
+### PRUEBAS USER
+POST http://localhost:3000/api/users/register HTTP/1.1
+Content-Type: application/json
+ 
+{
+    "name": "xd",
+    "age": 21,
+    "email": "xd@gmail.com",
+    "password": "abc123..", 
+    "city": "madrid", 
+    "interests": "nodejs", 
+    "allowOffers": "true"
+}
+### 
+POST http://localhost:3000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "javii@gmail.com",
+    "password": "abc123.." 
+}
+
+###
+PUT http://localhost:3000/api/users/64423b715f86e5012d0a6949 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyM2I3MTVmODZlNTAxMmQwYTY5NDkiLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MjA2MjcxOSwiZXhwIjoxNjgyMDY5OTE5fQ.IfX4KF-Yo9gEk3S6d2ZXmk-ZWTQEyy_tx_8hm9Fxbpg
+
+{
+    "name": "Mario",
+    "age": "25",
+    "email": "mario@gmail.com"
+}
+### 
+GET http://localhost:3000/api/webpages/
+
+###
+GET http://localhost:3000/api/webpages/747074ee-e99e-4d57-8c08-d9ffdc3a439c
+### 
+GET http://localhost:3000/api/webpages/search/barcelona
+### 
+GET http://localhost:3000/api/webpages/search/barcelona/sort
+### 
+PATCH http://localhost:3000/api/webpages/747074ee-e99e-4d57-8c08-d9ffdc3a439c HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ0MzFlNjFhM2Q3NWRkNjljM2FiYzMiLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MjE5MDgyMiwiZXhwIjoxNjgyMTk4MDIyfQ.bKCgGnJG3cNAzuAXtUY0RNpcT-WjM7Vs_-ftSK4KEXQ
+
+{
+  "nonEditable": {
+    "scoring": [10],
+    "reviews": [
+      "Increible partido, que bueno es el lstool"
+    ]
+  }
+}
+###
+DELETE http://localhost:3000/api/users/644422335d57ffc491eefe86
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ0MjIzMzVkNTdmZmM0OTFlZWZlODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MjE4NzY0MywiZXhwIjoxNjgyMTk0ODQzfQ.mbsmk5NDkSDY_EJhj4GFucaNuKBlDQN0LVrQwvV4Y-Q
+
+
+
+
+### PRUEBAS ADMIN 
+POST http://localhost:3000/api/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ADMIN",
+    "age": "23",
+    "email": "ADMIN@ADMIN.com",
+    "password": "root12345", 
+    "city": "madrid", 
+    "interests": "sssss", 
+    "allowOffers": "false",
+}
+###
+POST http://localhost:3000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "ADMIN@ADMIN.com",
+    "password": "root12345" 
+}
+###
+POST http://localhost:3000/api/commerce/register HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIxNjUwMTIsImV4cCI6MTY4MjE3MjIxMn0.BQDh7bi8YeqA3pfx4bBEHaKWrXWSCQESuWCPOFf3cmg
+
+{
+    "name": "Adidas",
+    "cif": "25345131",
+    "address": "tupadre 18",
+    "email": "adidas@gmail.com", 
+    "password": "nikeesmejor123",
+    "contact": "663454950"
+}
+###
+POST http://localhost:3000/api/commerce/register HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIxODkwMTcsImV4cCI6MTY4MjE5NjIxN30.PwpQcSjA0fppLUZjPH9vX29eH77j5sEatqo7hQuxCoQ
+
+{
+    "name": "Nike",
+    "cif": "23225452",
+    "address": "tumadre 20",
+    "email": "nike@gmail.com", 
+    "password": "adidaslachupa123",
+    "contact": "657468383"
+}
+### 
+GET http://localhost:3000/api/commerce/644171222e0c9074361d28b8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIwMDk0MjQsImV4cCI6MTY4MjAxNjYyNH0._qiMxZGvh_hMf4VvkE2lVQv8hjDSCZdTtz470C8vsRI
+###
+GET http://localhost:3000/api/commerce/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIwMDk0MjQsImV4cCI6MTY4MjAxNjYyNH0._qiMxZGvh_hMf4VvkE2lVQv8hjDSCZdTtz470C8vsRI
+###
+PUT http://localhost:3000/api/commerce/644171222e0c9074361d28b8 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIwNzcwODgsImV4cCI6MTY4MjA4NDI4OH0.lvHdWpY5axAR9LPZEke74qC8FPkHuzaUJvtbpNCh15I
+
+{
+    "name": "Adidas",
+    "cif": "33445566",
+    "address": "tupadre 18",
+    "email": "adidas@hotmail.com", 
+    "password": "contraseniaadidas123",
+    "contact": "663454950"
+}
+###
+DELETE http://localhost:3000/api/commerce/64416db8e73288de5a3cad48
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNmNlOTM4NjZiZDdiOTkwMjQ1NDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIwMDk0MjQsImV4cCI6MTY4MjAxNjYyNH0._qiMxZGvh_hMf4VvkE2lVQv8hjDSCZdTtz470C8vsRI 
+
+
+
+
+
+
+
+### PRUEBAS MERCHANT 
+POST http://localhost:3000/api/commerce/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "nike@gmail.com",
+    "password": "adidaslachupa123" 
+}
+###
+POST http://localhost:3000/api/webpages/e129c6a5-bb27-4e51-872c-dc6bd720e71a HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQzYmU4NDllMzM3MjYzZTI0YjEzYmMiLCJwYWdlSWQiOiJlMTI5YzZhNS1iYjI3LTRlNTEtODcyYy1kYzZiZDcyMGU3MWEiLCJpYXQiOjE2ODIxNjQ3MzksImV4cCI6MTY4MjQyMzkzOX0.2ZAceG1T0ipUNVNPkbUOlrj_-NosnKFbdfzYKIOSN94
+
+{
+    "city": "madrid",
+    "activity": "futbol",
+    "title": "Partido de futbol",
+    "summary": "partido de futbol con pele y maradona" 
+}
+###
+POST http://localhost:3000/api/webpages/747074ee-e99e-4d57-8c08-d9ffdc3a439c HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ0MmIyMDUwZGQ2OTljMjA5NTllNzUiLCJwYWdlSWQiOiI3NDcwNzRlZS1lOTllLTRkNTctOGMwOC1kOWZmZGMzYTQzOWMiLCJpYXQiOjE2ODIxODkyNzMsImV4cCI6MTY4MjQ0ODQ3M30.2Sz6GascBW6SCqGr4hiKq4O_Zd_7l90meUkGyFv2QMY
+
+{
+    "city": "barcelona",
+    "activity": "baloncesto",
+    "title": "Partido de baloncesto",
+    "summary": "partido de futbol con tu padre y maximiliano" 
+}
+### 
+GET http://localhost:3000/api/users/madrid
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNzEyMjJlMGM5MDc0MzYxZDI4YjgiLCJwYWdlSWQiOiI2OTE5YjM3MS05MzFlLTQxNTItOWNiMy1iZThkNjg4YmNhZjEiLCJpYXQiOjE2ODIwMTA3NjEsImV4cCI6MTY4MjI2OTk2MX0.IaSi_f7QEq1FY8u3F8qZUJcBbAFeJNvWNeDB2XzgcQc
+###     WEBPAGES SUBIR FOTO / TEXTO
+POST http://localhost:3000/api/webpages/6919b371-931e-4152-9cb3-be8d688bcaf1/photos HTTP/1.1 
+Content-Type: multipart/form-data; boundary=Boundry
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQxNzEyMjJlMGM5MDc0MzYxZDI4YjgiLCJwYWdlSWQiOiI2OTE5YjM3MS05MzFlLTQxNTItOWNiMy1iZThkNjg4YmNhZjEiLCJpYXQiOjE2ODIwMTA3NjEsImV4cCI6MTY4MjI2OTk2MX0.IaSi_f7QEq1FY8u3F8qZUJcBbAFeJNvWNeDB2XzgcQc
+
+--Boundry
+Content-Disposition: form-data; name="image"; filename="img.jpg"
+Content-Type: image/jpg
+
+< ./img.jpg
+--Boundry--
+### 
+POST http://localhost:3000/api/webpages/e129c6a5-bb27-4e51-872c-dc6bd720e71a/texts HTTP/1.1 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQzYmU4NDllMzM3MjYzZTI0YjEzYmMiLCJwYWdlSWQiOiJlMTI5YzZhNS1iYjI3LTRlNTEtODcyYy1kYzZiZDcyMGU3MWEiLCJpYXQiOjE2ODIxNjQ3MzksImV4cCI6MTY4MjQyMzkzOX0.2ZAceG1T0ipUNVNPkbUOlrj_-NosnKFbdfzYKIOSN94
+
+{
+    "texts":["nuevotexto1", "textonuevo2"]
+}

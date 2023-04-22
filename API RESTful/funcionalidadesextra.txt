@@ -1,0 +1,14 @@
+- cuando borras commerce, tambien borra su contenido subido
+- logins para users, admin, merchants 
+- validaciones para que solo user pueda editar/borrar su propio user y merchants igual
+  (utilizando jwts diferentes y haciendo comprobaciones con _ids)
+- permitir poner muchos scorings y reseñas diferentes para una actividad y luego calcular 
+  su media para mostrar por pantalla el orden de medias correctas si se ordena por esta
+- poder hacer puts pero enviando solo la informacion que quieres cambiar no el json completo
+- diferents jwts segun haya iniciado un user o un merchant con informacion diferente
+  (dos authMiddlewares diferentes, dos tokenSign diferentes)
+- admin crea el commerce y se le da un id unico para su web el cual se añade al json (con uuid) 
+  commerce inicia sesion y crea content, el cual esta linkado con el webid q se le dio al commerce
+- ciberseguridad se ha tenido en mente en cuanto a los errores del login,
+  almacenar el hash en la bbdd envede texto claro, enviar los datos justos y necesarios 
+  con las validaciones, hacer matcheddata en todos los req.body ... 
