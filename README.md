@@ -3,8 +3,10 @@
 Servidor back-end con multitud de funcionalidades. 
 
 DESCRIPCIÓN DEL PROYECTO: Una aplicación para que cualquier comercio registrado pueda subir su contenido (fotos, texto, etc) y pueda visualizarse cuando los usuarios busquen por los comercios de una ciudad y de una actividad concreta. Existen cuatro tipos de cliente: admins, comercios, usuarios anónimos y usuarios registrados.
+
 ALCANCE DEL PROYECTO: Back-end implementando un API Restful y una base de datos.
-IMPLEMENTACIÓN TÉCNICA: Node.js y y MongoDB (base de datos no relacional). Se han utilizado librerias y paquetes interesantes para cumplir ciertas funcionalidades tales como: JWT token, bcrypt, JEST, Swagger y más. 
+
+IMPLEMENTACIÓN TÉCNICA: Node.js y y MongoDB (base de datos no relacional). Se han utilizado librerias y paquetes interesantes para cumplir ciertas funcionalidades tales como: JWT token, bcrypt, JEST, Swagger y demás. 
 
 ## Compilar & Ejecutar 💿
 
